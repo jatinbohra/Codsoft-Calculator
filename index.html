@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Task-2 calculator</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+    <div class="grid-container">
+        <div class="item1" id="display"></div>
+        <div class="grid-item" onclick="clearDisplay()">AC</div>
+        <div class="grid-item" onclick="deleteLast()">C</div>
+        <div class="grid-item" onclick="appendToDisplay('%')">%</div>
+        <div class="grid-item" onclick="appendToDisplay('/')">/</div>
+        <div class="grid-item" onclick="appendToDisplay('7')">7</div>
+        <div class="grid-item" onclick="appendToDisplay('8')">8</div>
+        <div class="grid-item" onclick="appendToDisplay('9')">9</div>
+        <div class="grid-item" onclick="appendToDisplay('*')">*</div>
+        <div class="grid-item" onclick="appendToDisplay('4')">4</div>
+        <div class="grid-item" onclick="appendToDisplay('5')">5</div>
+        <div class="grid-item" onclick="appendToDisplay('6')">6</div>
+        <div class="grid-item" onclick="appendToDisplay('-')">-</div>
+        <div class="grid-item" onclick="appendToDisplay('1')">1</div>
+        <div class="grid-item" onclick="appendToDisplay('2')">2</div>
+        <div class="grid-item" onclick="appendToDisplay('3')">3</div>
+        <div class="grid-item" onclick="appendToDisplay('+')">+</div>
+        <div class="grid-item" onclick="appendToDisplay('00')">00</div>
+        <div class="grid-item" onclick="appendToDisplay('0')">0</div>
+        <div class="grid-item" onclick="appendToDisplay('.')">.</div>
+        <div class="grid-item" onclick="calculateResult()" style="background-color: orange;">=</div>
+    </div>
+    <script>
+        const display = document.getElementById('display');
+    
+        function appendToDisplay(value) 
+        {
+            display.innerText += value;
+        }
+        function clearDisplay() 
+        {
+            display.innerText = '';
+        }
+        function deleteLast() 
+        {
+            display.innerText = display.innerText.slice(0, -1);
+        }
+        function calculateResult() {
+        try {
+                display.innerText = eval(display.innerText.replace('%', '/100'));
+            } catch (e)
+            {
+                display.innerText = 'Error';
+            }
+        }
+        </script>
+    </body>
+</html>
