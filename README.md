@@ -1,1 +1,2 @@
-This is my internship project by #codsoft. in this project i create responsive basic calculator using html and css.
+This is my internship project by #codsoft. I created a responsive basic calculator using HTML and CSS for this project.
+image link: file:///C:/Users/hello/OneDrive/Desktop/CodSoft/Task2/index.html
